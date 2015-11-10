@@ -2,13 +2,13 @@
 FormulaEngine.Net Is a Simple FormulaEngine For .net Application (C#,VB,...)
 Today This Engine Support This Operations (+,-,/,*,Pow,Log,Log10,Sin,Cos,Sqrt,Tan)
 
-Operation Syntax:
-sin(variable)
-cos(variable)
-tan(variable)
-pow(variable1,variable2)
-sqrt(variable)
-log(variable)
+Operation Syntax:</br>
+sin(variable)</br>
+cos(variable)</br>
+tan(variable)</br>
+pow(variable1,variable2)</br>
+sqrt(variable)</br>
+log(variable)</br>
 
 Sample:
 var formula = "(log(pow(a,b)))+(cos(n)*(tan(m)))";
