@@ -1,6 +1,17 @@
 # FormulaEngine.Net
 FormulaEngine.Net Is a Simple FormulaEngine For .net Application (C#,VB,...)
-Today This Engine Support This Operations (+,-,/,*,Pow,Log,Sin)
+Today This Engine Support This Operations (+,-,/,*,Pow,Log,Log10,Sin,Cos,Sqrt,Tan)
+
+Operation Syntax:
+sin(variable)
+cos(variable)
+tan(variable)
+pow(variable1,variable2)
+sqrt(variable)
+log(variable)
+
+Sample:
+var formula = "(log(pow(a,b)))+(cos(n)*(tan(m)))";
 
 Exmaple:
 
@@ -28,18 +39,25 @@ Sample Code:
             variables.Add("d", 8);
             variables.Add("var1", 2);
             variables.Add("some", 3);
+            variables.Add("n", 30);
+            variables.Add("m", 45);
             
             FormulaEngine.Net.Engine ap = new FormulaEngine.Net.Engine(variables);
             double result = 0;
 
-            result = ap.Process("(var1*some/c)*log(c+k)");
+            result = ap.Process("(var1*alakiy5/c)*log(c+k)");
 
-            result = ap.Process("(var1*some/c)*log(log(c+k))");//-0.024409488559873654
+            result = ap.Process("(var1*alakiy5/c)*log10(log10(c+k))");//-0.024409488559873654
 
-            result = ap.Process("((log(a))*b)+pow(a,b)");//8.9030899869919438
+            result = ap.Process("((log10(a))*b)+pow(a,b)");//8.9030899869919438
 
-            result = ap.Process("((log(a))*b)+pow(pow(a,c),b)");//32768.90308998699
+            result = ap.Process("((log10(a))*b)+pow(pow(a,c),b)");//32768.90308998699
 
-            result = ap.Process("log(pow(a,b))");//0.90308998699194354
+            result = ap.Process("log10(pow(a,b))");//0.90308998699194354
 
             result = ap.Process("var1+c");//7
+
+            result = ap.Process("sqrt(n)"); //..
+
+            result = ap.Process("(log(pow(a,b)))+(cos(n)*(tan(m)))"); //..
+
