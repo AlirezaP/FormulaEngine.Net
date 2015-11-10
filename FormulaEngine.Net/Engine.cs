@@ -8,7 +8,7 @@ namespace FormulaEngine.Net
 {
     public class Engine
     {
-        string[] Reserve = new string[] { "log(", "pow(" };
+        string[] Reserve = new string[] { "log10(","log(", "pow(","sin(","cos(","tan(","sqrt(" };
         Dictionary<string, double> Variable = new Dictionary<string, double>();
 
         public Engine(Dictionary<string, double> input)
@@ -131,7 +131,8 @@ namespace FormulaEngine.Net
 
                     case ",": break;
 
-                    case "log": Values.Push(b); Values.Push(Math.Log10(a)); break;
+                    case "log10": Values.Push(b); Values.Push(Math.Log10(a)); break;
+                    case "log": Values.Push(b); Values.Push(Math.Log(a)); break;
 
                     default: Values.Push(a); Values.Push(b); break;
                 }
@@ -144,8 +145,12 @@ namespace FormulaEngine.Net
             {
                 switch (Operations.Peek())
                 {
-                    case "log": Operations.Pop(); Values.Push(Math.Log10(Values.Pop())); break;
+                    case "log10": Operations.Pop(); Values.Push(Math.Log10(Values.Pop())); break;
+                    case "log": Operations.Pop(); Values.Push(Math.Log(Values.Pop())); break;
                     case "sin": Operations.Pop(); Values.Push(Math.Sin(Values.Pop())); break;
+                    case "cos": Operations.Pop(); Values.Push(Math.Cos(Values.Pop())); break;
+                    case "sqrt": Operations.Pop(); Values.Push(Math.Sqrt(Values.Pop())); break;
+                    case "tan": Operations.Pop(); Values.Push(Math.Tan(Values.Pop())); break;
 
                     case "pow": Operations.Pop(); Values.Push(Math.Pow(b, a)); break;
                 }
@@ -195,7 +200,8 @@ namespace FormulaEngine.Net
                 case "+": Values.Push(b + a); break;
                 case "-": Values.Push(b - a); break;
 
-                case "log": Values.Push(b); Values.Push(Math.Log10(a)); break;
+                case "log10": Values.Push(b); Values.Push(Math.Log10(a)); break;
+                case "log": Values.Push(b); Values.Push(Math.Log(a)); break;
 
                 default: Values.Push(a); Values.Push(b); break;
             }
@@ -204,8 +210,12 @@ namespace FormulaEngine.Net
             {
                 switch (Operations.Peek())
                 {
-                    case "log": Operations.Pop(); Values.Push(Math.Log10(Values.Pop())); break;
+                    case "log10": Operations.Pop(); Values.Push(Math.Log10(Values.Pop())); break;
+                    case "log": Operations.Pop(); Values.Push(Math.Log(Values.Pop())); break;
                     case "sin": Operations.Pop(); Values.Push(Math.Sin(Values.Pop())); break;
+                    case "cos": Operations.Pop(); Values.Push(Math.Cos(Values.Pop())); break;
+                    case "Sqrt": Operations.Pop(); Values.Push(Math.Sqrt(Values.Pop())); break;
+                    case "tan": Operations.Pop(); Values.Push(Math.Tan(Values.Pop())); break;
                 }
             }
         }

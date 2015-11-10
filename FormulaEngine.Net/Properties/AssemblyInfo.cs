@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FormulaEngine.Net")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("FormulaEngine.Net Is a Simple Engine For .Net APP")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("AlirezaP")]
 [assembly: AssemblyProduct("FormulaEngine.Net")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
