@@ -10,7 +10,7 @@ pow(variable1,variable2)</br>
 sqrt(variable)</br>
 log(variable)</br>
 
-Sample:
+Sample:</br>
 var formula = "(log(pow(a,b)))+(cos(n)*(tan(m)))";
 
 Exmaple:
