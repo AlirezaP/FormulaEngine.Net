@@ -40,7 +40,7 @@ namespace FormulaEngine.Net
             string tempValidate = Validate(algorithm);
             if (tempValidate != null)
             {
-                throw new System.ArgumentException(tempValidate);
+                throw new System.InvalidOperationException(tempValidate);
             }
 
             string Temp = "";
