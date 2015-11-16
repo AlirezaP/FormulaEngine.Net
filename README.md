@@ -47,23 +47,24 @@ Sample Code:
             variables.Add("some", 3);
             variables.Add("n", 30);
             variables.Add("m", 45);
+            variables.Add("alakiy5", 45);
             
             FormulaEngine.Net.Engine ap = new FormulaEngine.Net.Engine(variables);
             double result = 0;
 
             result = ap.Process("(var1*alakiy5/c)*log(c+k)");
 
-            result = ap.Process("(var1*alakiy5/c)*log10(log10(c+k))");//-0.024409488559873654
+            result = ap.Process("(var1*alakiy5/c)*log10(log10(c+k))");
 
-            result = ap.Process("((log10(a))*b)+pow(a,b)");//8.9030899869919438
+            result = ap.Process("((log10(a))*b)+pow(a,b)");
 
-            result = ap.Process("((log10(a))*b)+pow(pow(a,c),b)");//32768.90308998699
+            result = ap.Process("((log10(a))*b)+pow(pow(a,c),b)");
 
-            result = ap.Process("log10(pow(a,b))");//0.90308998699194354
+            result = ap.Process("log10(pow(a,b))");
 
-            result = ap.Process("var1+c");//7
+            result = ap.Process("var1+c");
 
-            result = ap.Process("sqrt(n)"); //..
+            result = ap.Process("sqrt(n)"); 
 
-            result = ap.Process("(log(pow(a,b)))+(cos(n)*(tan(m)))"); //..
+            result = ap.Process("(log(pow(a,b)))+(cos(n)*(tan(m)))"); 
 
