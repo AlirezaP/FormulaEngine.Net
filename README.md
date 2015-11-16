@@ -27,8 +27,10 @@ OutPut:
 
 2</br>
 
-variables must be in the dictionary object:</br>
+variables And Value must be in the dictionary object:</br>
 Dictionary(variableName, variableValue)</br></br>
+
+*Note: You Cant Put Value Directly To The Formula. You Must Put The Value In Formula With Dictionary.</br>
 
 please be carefull in formula text. count of '(' must be equal with count of  ')' for example: ((sin(a))) .</br></br>
 Sample Code:
