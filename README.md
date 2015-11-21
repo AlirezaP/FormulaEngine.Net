@@ -27,7 +27,7 @@ OutPut:
 
 2</br>
 
-variables And Value must be in the dictionary object:</br>
+variables And variablesValue must be in the dictionary object:</br>
 Dictionary(variableName, variableValue)</br></br>
 
 *Now You Can Put Digit Directly To The Formula.</br>
