@@ -49,6 +49,7 @@ namespace FormulaEngine.Net
             Stack<string> Operations = new Stack<string>();
 
             algorithm = algorithm.Replace(" ", "").Trim();
+            algorithm = SplitDigit(algorithm);
             for (int i = 0; i < algorithm.Length; i++)
             {
                 Temp += algorithm[i].ToString();
