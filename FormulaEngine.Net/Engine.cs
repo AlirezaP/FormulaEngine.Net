@@ -16,10 +16,32 @@ namespace FormulaEngine.Net
             Variable = input;
         }
 
+        private string Validate(string formula)
+        {
+            int openCount = 0;
+            int closeCount = 0;
+            for (int i = 0; i < formula.Length; i++)
+            {
+                if (formula[i] == '(')
+                    openCount++;
+
+                if (formula[i] == ')')
+                    closeCount++;
+            }
+
+            if (openCount != closeCount)
+                return "Count Of '(' is not equal with ')'";
+
+            return null;
+        }
+
         public double Process(string algorithm)
         {
-            algorithm = algorithm.Replace(" ", "").Trim(); ;
-            algorithm = SplitDigit(algorithm);
+            string tempValidate = Validate(algorithm);
+            if (tempValidate != null)
+            {
+                throw new System.InvalidOperationException(tempValidate);
+            }
 
             string Temp = "";
 
