@@ -18,6 +18,9 @@ namespace FormulaEngine.Net
 
         public double Process(string algorithm)
         {
+            algorithm = algorithm.Replace(" ", "").Trim(); ;
+            algorithm = SplitDigit(algorithm);
+
             string Temp = "";
 
             Stack<double> Values = new Stack<double>();
@@ -62,6 +65,37 @@ namespace FormulaEngine.Net
             }
 
             return Values.Peek();
+        }
+
+
+        private string SplitDigit(string algorithm)
+        {
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"\b\d*([.]?\d*)?\b");
+            var temp = regex.Matches(algorithm);
+
+            int vIndex = 1;
+            string v = "var";
+            for (int i = 0; i < temp.Count; i++)
+            {
+                if (string.IsNullOrEmpty(temp[i].Value))
+                    continue;
+
+                while (true)
+                {
+                    v = "var" + vIndex.ToString();
+                    var t = Variable.Keys.Where(p => p.Contains(v)).FirstOrDefault();
+
+                    if (t == null)
+                        break;
+
+                    vIndex++;
+                }
+                var r = new System.Text.RegularExpressions.Regex(temp[i].Value);
+                algorithm = r.Replace(algorithm, v, 1, temp[i].Index);
+
+                Variable.Add(v, double.Parse(temp[i].Value, new System.Globalization.CultureInfo("en-US")));
+            }
+            return algorithm;
         }
 
         private bool IsReserve(string token)
