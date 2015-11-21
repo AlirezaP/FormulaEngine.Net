@@ -30,7 +30,7 @@ OutPut:
 variables And Value must be in the dictionary object:</br>
 Dictionary(variableName, variableValue)</br></br>
 
-*Note: You Cant Put Value Directly To The Formula. You Must Put The Value In Formula With Dictionary.</br>
+*Now You Can Put Digit Directly To The Formula.</br>
 
 please be carefull in formula text. count of '(' must be equal with count of  ')' for example: ((sin(a))) .</br></br>
 Sample Code:
@@ -67,4 +67,8 @@ Sample Code:
             result = ap.Process("sqrt(n)"); 
 
             result = ap.Process("(log(pow(a,b)))+(cos(n)*(tan(m)))"); 
+            
+            result = ap.Process("(var1+c)*6");
+            
+            result = ap.Process("sin(30)");
 
