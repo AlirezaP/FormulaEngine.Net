@@ -118,7 +118,7 @@ namespace FormulaEngine.Net
 
                 Variable.Add(v, double.Parse(temp[i].Value, new System.Globalization.CultureInfo("en-US")));
             }
-            return algorithm;
+            return "("+algorithm+")";
         }
 
         private bool IsReserve(string token)

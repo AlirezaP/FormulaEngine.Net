@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FormulaEngine.Net")]
-[assembly: AssemblyDescription("FormulaEngine.Net Is a Simple Engine For .Net APP")]
+[assembly: AssemblyTitle("FormulaEngineUnitTest")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AlirezaP")]
-[assembly: AssemblyProduct("FormulaEngine.Net")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("FormulaEngineUnitTest")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7276c52c-ed2f-4fbd-9bba-8629cf929308")]
+[assembly: Guid("8acae91a-5ffa-42cf-b5e2-9d530d8f402f")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.2")]
-[assembly: AssemblyFileVersion("1.0.3.2")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
