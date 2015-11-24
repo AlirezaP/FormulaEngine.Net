@@ -52,6 +52,10 @@ Sample Code:
             FormulaEngine.Net.Engine ap = new FormulaEngine.Net.Engine(variables);
             double result = 0;
 
+            FormulaEngine.Net.Validation validator = new FormulaEngine.Net.Validation();
+            bool res = validator.SyntaxValidation("a+b"); //------> true
+            res = validator.SyntaxValidation("a++b"); //------> false
+
             result = ap.Process("(var1*alakiy5/c)*log(c+k)");
 
             result = ap.Process("(var1*alakiy5/c)*log10(log10(c+k))");
