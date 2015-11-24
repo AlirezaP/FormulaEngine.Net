@@ -67,5 +67,57 @@ namespace FormulaEngineUnitTest
             Assert.AreEqual(-0.98803162409286183, result, "case10");
 
         }
+
+        [TestMethod]
+        public void TestSyntax()
+        {
+            FormulaEngine.Net.Validation validator = new FormulaEngine.Net.Validation();
+
+            bool res = validator.SyntaxValidation("a+b");
+            Assert.AreEqual(true, res);
+
+            res = validator.SyntaxValidation("a++b");
+            Assert.AreEqual(false, res);
+
+            res = validator.SyntaxValidation("a+*b");
+            Assert.AreEqual(false, res);
+
+            res = validator.SyntaxValidation("log(a)+b");
+            Assert.AreEqual(true, res);
+
+            res = validator.SyntaxValidation("log(a)sin(b)");
+            Assert.AreEqual(false, res);
+
+            res = validator.SyntaxValidation("a+b--");
+            Assert.AreEqual(false, res);
+
+            res = validator.SyntaxValidation("(var1*alakiy5/c)*log10(c+k)");
+            Assert.AreEqual(true, res, "case1");
+
+            res = validator.SyntaxValidation("(var1*alakiy5/c)*log10(log10(c+k))");
+            Assert.AreEqual(true, res, "case2");
+
+            res = validator.SyntaxValidation("((log10(a))*b)+pow(a,b)");
+            Assert.AreEqual(true, res, "case3");
+
+            res = validator.SyntaxValidation("((log10(a))*b)+pow(pow(a,c),b)");
+            Assert.AreEqual(true, res, "case4");
+
+            res = validator.SyntaxValidation("log10(pow(a,b))");
+            Assert.AreEqual(true, res, "case5");
+
+            res = validator.SyntaxValidation("var1+c");
+            Assert.AreEqual(true, res, "case6");
+
+            res = validator.SyntaxValidation("sqrt(n)");
+            Assert.AreEqual(true, res, "case7");
+
+            res = validator.SyntaxValidation("(log(pow(a,b)))+(cos(n)*(tan(m)))");
+            Assert.AreEqual(true, res, "case8");
+
+            res = validator.SyntaxValidation("(var1+c)*6");
+            Assert.AreEqual(true, res, "case9");
+
+        }
     }
 }

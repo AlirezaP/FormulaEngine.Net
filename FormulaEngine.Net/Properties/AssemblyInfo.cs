@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FormulaEngine.Net")]
 [assembly: AssemblyDescription("FormulaEngine.Net Is a Simple Engine For .Net APP")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AlirezaP")]
+[assembly: AssemblyCompany("Alireza Paridar")]
 [assembly: AssemblyProduct("FormulaEngine.Net")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.2")]
-[assembly: AssemblyFileVersion("1.0.3.2")]
+[assembly: AssemblyVersion("1.0.3.3")]
+[assembly: AssemblyFileVersion("1.0.3.3")]

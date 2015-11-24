@@ -8,37 +8,20 @@ namespace FormulaEngine.Net
 {
     public class Engine
     {
-        string[] Reserve = new string[] { "log10(","log(", "pow(","sin(","cos(","tan(","sqrt(" };
+        string[] Reserve = new string[] { "log10(", "log(", "pow(", "sin(", "cos(", "tan(", "sqrt(" };
         Dictionary<string, double> Variable = new Dictionary<string, double>();
+
+        Validation validator = new Validation();
 
         public Engine(Dictionary<string, double> input)
         {
             Variable = input;
         }
 
-        private string Validate(string formula)
-        {
-            int openCount = 0;
-            int closeCount = 0;
-            for (int i = 0; i < formula.Length; i++)
-            {
-                if (formula[i] == '(')
-                    openCount++;
-
-                if (formula[i] == ')')
-                    closeCount++;
-            }
-
-            if (openCount != closeCount)
-                return "Count Of '(' is not equal with ')'";
-
-            return null;
-        }
-
         public double Process(string algorithm)
         {
-            string tempValidate = Validate(algorithm);
-            if (tempValidate != null)
+            string tempValidate = "";
+            if (!validator.BracketValidation(algorithm, out tempValidate))
             {
                 throw new System.InvalidOperationException(tempValidate);
             }
@@ -118,7 +101,7 @@ namespace FormulaEngine.Net
 
                 Variable.Add(v, double.Parse(temp[i].Value, new System.Globalization.CultureInfo("en-US")));
             }
-            return "("+algorithm+")";
+            return "(" + algorithm + ")";
         }
 
         private bool IsReserve(string token)
