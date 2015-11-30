@@ -2,6 +2,8 @@
 FormulaEngine.Net Is a Simple FormulaEngine For .net Application (C#,VB,...)
 Today This Engine Support This Operations (+,-,/,*,Pow,Log,Log10,Sin,Cos,Sqrt,Tan)
 
+Nuget Url: http://www.nuget.org/packages/FormulaEngine.Net/
+
 Operation Syntax:</br>
 sin(variable)</br>
 cos(variable)</br>
