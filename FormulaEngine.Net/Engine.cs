@@ -96,7 +96,7 @@ namespace FormulaEngine.Net
 
                     vIndex++;
                 }
-                var r = new System.Text.RegularExpressions.Regex(temp[i].Value);
+                var r = new System.Text.RegularExpressions.Regex(@"\b"+temp[i].Value+@"\b");
                 algorithm = r.Replace(algorithm, v, 1, temp[i].Index);
 
                 Variable.Add(v, double.Parse(temp[i].Value, new System.Globalization.CultureInfo("en-US")));
