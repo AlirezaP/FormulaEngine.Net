@@ -2,6 +2,8 @@
 FormulaEngine.Net Is a Simple FormulaEngine For .net Application (C#,VB,...)
 Today This Engine Support This Operations (+,-,/,*,Pow,Log,Log10,Sin,Cos,Sqrt,Tan)
 
+Nuget Url: http://www.nuget.org/packages/FormulaEngine.Net/
+
 Operation Syntax:</br>
 sin(variable)</br>
 cos(variable)</br>
@@ -9,6 +11,7 @@ tan(variable)</br>
 pow(variable1,variable2)</br>
 sqrt(variable)</br>
 log(variable)</br>
+log10(variable)</br>
 
 Sample:</br>
 var formula = "(log(pow(a,b)))+(cos(n)*(tan(m)))";
@@ -51,6 +54,10 @@ Sample Code:
             
             FormulaEngine.Net.Engine ap = new FormulaEngine.Net.Engine(variables);
             double result = 0;
+
+            FormulaEngine.Net.Validation validator = new FormulaEngine.Net.Validation();
+            bool res = validator.SyntaxValidation("a+b"); //------> true
+            res = validator.SyntaxValidation("a++b"); //------> false
 
             result = ap.Process("(var1*alakiy5/c)*log(c+k)");
 
